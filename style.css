@@ -1,0 +1,27 @@
+.timerContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(68, 207, 207);
+
+}
+.controllers{
+    display: flex;
+    justify-content: center;
+}
+
+.hide{
+    display: none;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
