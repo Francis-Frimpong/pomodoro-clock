@@ -48,4 +48,4 @@ function pomodoroClock() {
 
 }
 
-pomodoroClock()
+play.addEventListener('click',pomodoroClock);
