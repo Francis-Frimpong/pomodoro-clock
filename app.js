@@ -6,6 +6,7 @@ const reset = document.querySelector('.fa-rotate-right');
 
 const minutesSpan = document.querySelector('.minutesSpan');
 const secondsSpan = document.querySelector('.secondsSpan');
+const audio = new Audio('audio/bedside-clock-alarm-95792.mp3');
 
 let min;
 let sec;
@@ -19,20 +20,22 @@ function pomodoroClock() {
     second.textContent = sec;
 
     timer = setInterval(() => {
-        if (sec === 0){
-            sec = 60;
-            min--
-            minute.textContent = min
-            
-        }
 
-        if (min === 0 && sec === 0){
+        if (min == 0 && sec == 0){
+            console.log('Stop timer')
             audio.play();
             clearInterval(timer);
             return
         }
 
-        if( min > 10){
+        if (sec === 0){
+            sec = 60;
+            min--
+            minute.textContent = min
+        }
+
+
+        if( min > 9){
             minutesSpan.classList.add('hide');
         } else{
             minutesSpan.classList.remove('hide');
@@ -42,10 +45,24 @@ function pomodoroClock() {
         } else{
             secondsSpan.classList.remove('hide');
         }
+
+      
         --sec
         second.textContent = sec; 
     }, 1000)
 
 }
 
+function resetTimer() {
+
+    min = 25;
+    minute.textContent = min;
+    sec = 0
+    second.textContent = sec;
+    secondsSpan.classList.remove('hide');
+
+    clearInterval(timer);
+}
+
 play.addEventListener('click',pomodoroClock);
+reset.addEventListener('click', resetTimer);
