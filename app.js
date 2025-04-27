@@ -14,6 +14,7 @@ let sec;
 let timer;
 
 function pomodoroClock() {
+    play.classList.add('disabled');
     min = 25;
     minute.textContent = min;
     sec = 0;
@@ -54,7 +55,7 @@ function pomodoroClock() {
 }
 
 function resetTimer() {
-
+    play.classList.remove('disabled');
     min = 25;
     minute.textContent = min;
     sec = 0

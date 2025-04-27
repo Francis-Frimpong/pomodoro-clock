@@ -1,15 +1,17 @@
 .timerContainer{
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
 .timer{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid rgb(68, 207, 207);
-
+    border: 2px solid rgb(63, 201, 219);
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
 .title{
@@ -23,7 +25,7 @@
 }
 
 .controller i{
-    margin: 2em;
+    margin: .7em;
 }
 
 .hide{
